@@ -1,0 +1,236 @@
+.chat-info-container {
+  background: url("../assest/Telbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  height: 99vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Chatning yuqori qismi */
+.chat-info-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 15px;
+  background-color: #212121;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 2;
+}
+.chat-info-head img {
+  width: 50px;
+  border-radius: 50%;
+}
+.chat-modal {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #212121;
+  padding: 30px 20px;
+  border-radius: 10px;
+  color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+}
+.chat-modal h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 300px;
+  margin: 10px 0;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 3px solid #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  background-color: #959494;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(16px);
+}
+
+input:disabled + .slider {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+input:disabled:checked + .slider {
+  background-color: #90caf9;
+}
+
+.chat-modal img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.message-list {
+  position: absolute;
+
+  bottom: 130px;
+
+  right: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.message-ms {
+  position: relative;
+}
+.message-ms > i {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.message-item {
+  background: linear-gradient(to right, #0c6798, #0b1da7);
+  padding: 8px 25px 13px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+/* Xabar yo‘qligida ko‘rsatish */
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+/* Pastki input css */
+.entermessage {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 15px 30px;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  position: relative;
+}
+
+.emoji-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  /* background-color: #333; */
+  color: white;
+}
+
+.emoji-button {
+  padding: 6px 12px;
+  border: none;
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 25px;
+}
+
+.emoji-picker-wrapper {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  z-index: 5;
+}
+.rotaded-icon {
+  transform: rotate(150deg);
+  transform-origin: center;
+}
+
+.send-button {
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.sent-image {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+

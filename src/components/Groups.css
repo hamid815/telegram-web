@@ -1,0 +1,38 @@
+.groups-wrapper {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0px 16px;
+  -webkit-overflow-scrolling: touch; 
+  border-bottom: 2px solid #000000;
+  
+}
+
+.group-tab {
+  flex: 0 0 auto; /* Elementlar o‘z o‘lchamida qoladi */
+  padding: 8px 20px;
+  background-color: #f2f2f200;
+  border-radius: 8px 8px 0 0 ;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.group-tab:hover {
+  background-color: #303030;
+}
+.group-tab h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(177, 177, 177);
+}
+.groups-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.groups-wrapper {
+  scrollbar-width: none; 
+}

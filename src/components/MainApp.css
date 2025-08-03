@@ -1,0 +1,60 @@
+.allchats{
+    display: flex;
+}
+.chats{
+    max-width: 50%;
+}
+.chats>div{
+    width: 96%;
+    border-radius: 10px;
+    margin: 5px;
+}
+.chats>div>div:hover{
+    background-color: rgb(40, 40, 40);
+}
+.chats>div>div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding:10px 15px;
+    border-radius: 20px;
+}
+.chatlar-mal{
+  font-size: 15px;
+  color: #a7a7a7;
+  font-weight: 550;
+}
+.chatlar{
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    cursor: pointer;
+}
+.chatlar img{
+    width: 55px;
+    border-radius: 50%;
+}
+.allchats {
+  display: flex;
+  height: calc(100vh); 
+  
+}
+
+.chats {
+  min-width: 50px;
+  max-width: 380px;
+  overflow-y: auto;
+  transition: width 0.1s;
+}
+
+
+
+.chatinfo {
+  flex: 1;
+  overflow: auto;
+}
+.resizer {
+  width: 5px;
+  cursor: col-resize;
+  background-color: #464646;
+}

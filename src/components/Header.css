@@ -1,0 +1,160 @@
+.headerCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+}
+.headerCont > button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 27px;
+}
+.headerCont > div {
+  position: relative;
+}
+.headerCont input {
+  padding: 8px 30px;
+  border: 1px solid #5e5d5d;
+  border-radius: 15px;
+  color: #fff;
+  /* background-color: rgb(22, 22, 22); */
+  font-size: 17px;
+  width: 100%;
+}
+.headerCont input:hover {
+  border: 1px solid #8a8a8a;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  transform: translateY(50%);
+  font-size: 18px;
+  color: #b4b4b4;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(21, 21, 21);
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+  animation: slideIn 0.3s ease-in-out;
+  color: #fff;
+}
+.menu ul {
+  background-color: rgb(21, 21, 21);
+  list-style: none;
+  padding: 16px;
+  margin-top: 5px;
+  /* margin: 40px 25px; */
+  text-decoration: none;
+}
+.iks {
+  font-size: 25px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.iks:hover {
+  color: rgb(255, 255, 255);
+  background-color: red;
+}
+
+.menu ul li,
+.menu ul li Link {
+  padding: 7px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #b4b4b4;
+  text-decoration: none;
+  border-bottom: none;
+}
+.menu ul li i {
+  font-size: 24px;
+  font-weight: 400;
+}
+.menu ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mor {
+  justify-content: space-between;
+}
+.mor-modal {
+  display: none;
+}
+.overlay .menu ul li:hover .mor-modal {
+  display: block;
+}
+.mor-wrapper {
+  position: relative;
+}
+
+.mor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: #b4b4b4;
+  cursor: pointer;
+}
+
+.mor-modal {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  padding: 2px;
+  background-color: rgb(32, 32, 32);
+  border-radius: 5px;
+  z-index: 999;
+  width: 200px;
+}
+
+.mor-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mor-modal ul li {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: #b4b4b4;
+}
+
+.mor-wrapper:hover .mor-modal {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.overlay .menu {
+  animation: slideIn 0.3s ease-in-out;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
