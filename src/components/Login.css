@@ -14,11 +14,11 @@
 .loginmiss{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
     margin: 30px;
+    gap: 5px;
 }
 .loginmiss p{
     text-align: start;
@@ -38,5 +38,19 @@
     background-color: #262235;
     cursor: pointer;
 }
-
-
+@media (max-width: 768px) {
+    .login-container button {
+        width: 80%;
+    }
+    .login-container img{
+        width: 70%;
+        height: auto;
+    }
+    .login-container h2{
+        font-size: 22px;
+    }
+   
+    .loginmiss p{
+        font-size: 14px;
+    }
+}

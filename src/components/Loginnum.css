@@ -47,6 +47,9 @@ fieldset{
     border-radius: 10px;
     color: #fff;
 }
+ fieldset>div{
+    display: flex;
+   }
 input{
     background-color: transparent;
     border: none;
@@ -123,4 +126,28 @@ legend{
     background-color: #262235;
     cursor: pointer;
 }
-
+@media(max-width: 768px){
+    .loginnumCont img{
+        width: 40%;
+        height: auto;
+    }
+    .loginnumCont input{
+        width: 300px;
+    }
+    .next-btn{
+        width: 300px;
+    }
+    .loginnumCont h2{
+        font-size: 22px;
+    }
+    .loginnumCont p{
+        font-size: 14px;
+        width: 80%;
+    }
+   
+  
+    .next-btn, .next-demo-btn, .qrcode{
+        /* width: 80%; */
+        width: 300px;
+    }
+}
