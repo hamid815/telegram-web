@@ -10,7 +10,6 @@ body{
 }
 .setting-container {
     padding: 20px;
-    
 }
 .settingHead{
     display: flex;
@@ -80,3 +79,58 @@ body{
 .settingList h3:hover {
     background-color: #3c3c3c;
 }
+.groups-wrapper {
+  display: flex;
+  gap: 10px;
+  background-color: #181818;
+  padding: 10px;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.group-tab {
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  /* background-color: #2c2c2c; */
+  color: #fff;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+
+
+.group-tab.active {
+  background-color: #3c3c3c;
+}
+
+.chat-list {
+  padding: 10px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.chat-item:hover {
+  background-color: #2c2c2c;
+}
+
+.chat-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.empty-text {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+

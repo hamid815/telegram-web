@@ -8,12 +8,16 @@
   overflow: hidden;
 }
 
+.chatlar-container>div:hover {
+  background-color: rgba(35, 35, 35, 0.5);
+  border-radius: 10px;
+}
+
 /* Chatning yuqori qismi */
 .chat-info-head {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 10px 15px;
+  padding: 10px 5px 10px 70px;
   background-color: #212121;
   position: absolute;
   top: 0;
@@ -22,10 +26,34 @@
   height: 70px;
   z-index: 2;
 }
+
+.back-btn {
+  background-color: #212121;
+  color: white;
+  border: none;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  z-index: 999;
+  display: none;
+}
+
+.chat-info-head>div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .chat-info-head img {
   width: 50px;
   border-radius: 50%;
+  margin: 0 5px;
 }
+
 .chat-modal {
   position: absolute;
   top: 80px;
@@ -41,11 +69,11 @@
   align-items: center;
   min-width: 300px;
 }
+
 .chat-modal h2 {
   margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 24px;
   margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .switch-wrapper {
@@ -125,26 +153,31 @@ input:disabled:checked + .slider {
   margin-bottom: 10px;
 }
 
+/* YANGI: Scroll ishlashi uchun o‘zgartirilgan qism */
 .message-list {
   position: absolute;
-
-  bottom: 130px;
-
-  right: 20px;
+  top: 70px; 
+  bottom: 90px; 
+  /* left: 150; */
+  right: -20px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 10px 40px;
 }
+
 .message-ms {
   position: relative;
+  
 }
+
 .message-ms > i {
   position: absolute;
   bottom: 5px;
   right: 5px;
 }
+
 .message-item {
   background: linear-gradient(to right, #0c6798, #0b1da7);
   padding: 8px 25px 13px 20px;
@@ -192,7 +225,6 @@ input:disabled:checked + .slider {
   border-radius: 6px;
   border: none;
   outline: none;
-  /* background-color: #333; */
   color: white;
 }
 
@@ -212,6 +244,7 @@ input:disabled:checked + .slider {
   right: 0;
   z-index: 5;
 }
+
 .rotaded-icon {
   transform: rotate(150deg);
   transform-origin: center;
@@ -227,6 +260,7 @@ input:disabled:checked + .slider {
   font-size: 20px;
   margin-left: 10px;
 }
+
 .sent-image {
   max-width: 200px;
   max-height: 200px;
@@ -234,3 +268,12 @@ input:disabled:checked + .slider {
   margin-top: 5px;
 }
 
+@media (max-width: 768px) {
+  .back-btn {
+    display: block;
+  }
+
+  .back-btn:hover {
+    background-color: #2a2a2a;
+  }
+}

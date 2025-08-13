@@ -29,6 +29,7 @@
 .headerCont input:hover {
   border: 1px solid #8a8a8a;
 }
+
 .search-icon {
   position: absolute;
   left: 10px;
@@ -36,27 +37,42 @@
   font-size: 18px;
   color: #b4b4b4;
 }
-
-.menu {
+.overlay{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(21, 21, 21);
+  z-index: 998;
+}
+.menu {
+  background-color: transparent;
+
   display: flex;
   justify-content: flex-start;
-  /* align-items: flex-start; */
+  
   animation: slideIn 0.3s ease-in-out;
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
-.menu ul {
-  background-color: rgb(21, 21, 21);
+.menul {
+   position: fixed;
+  top: 50px;
+  left: 20px;
+  border-radius: 15px;
+  border: 1px solid #5e5d5d;
+  z-index: 999;
+  max-height: 400px;
+  background-color: rgba(0, 1, 1, 0.923);
   list-style: none;
   padding: 16px;
   margin-top: 5px;
   /* margin: 40px 25px; */
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.2s ease-out forwards;
+  transform-origin: top left;
+
 }
 .iks {
   font-size: 25px;
@@ -92,12 +108,16 @@
 }
 .mor {
   justify-content: space-between;
+  animation: fadeIn 0.2s ease-out forwards;
+  transform-origin: top left;
 }
 .mor-modal {
   display: none;
 }
 .overlay .menu ul li:hover .mor-modal {
   display: block;
+  animation: fadeIn 0.2s ease-out forwards;
+  transform-origin: top left;
 }
 .mor-wrapper {
   position: relative;
@@ -115,13 +135,15 @@
 .mor-modal {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 40%;
+  top: 80%;
+  left: 50%;
   padding: 2px;
   background-color: rgb(32, 32, 32);
+  background-color: rgba(0, 1, 1, 0.923);
+  border: 1px solid #5e5d5d;
   border-radius: 5px;
   z-index: 999;
-  width: 200px;
+  width: 180px;
 }
 
 .mor-modal ul {
@@ -140,14 +162,18 @@
   display: block;
 }
 
-@keyframes slideIn {
+
+
+@keyframes fadeIn{
   from {
-    transform: translateX(-100%);
+    opacity: 0;transform: scale(0.5);
   }
-  to {
-    transform: translateX(0);
+  to{
+    opacity: 1;transform: scale(1);
   }
+
 }
+
 
 .overlay .menu {
   animation: slideIn 0.3s ease-in-out;

@@ -1,60 +1,104 @@
-.allchats{
-    display: flex;
-}
-.chats{
-    max-width: 50%;
-}
-.chats>div{
-    width: 96%;
-    border-radius: 10px;
-    margin: 5px;
-}
-.chats>div>div:hover{
-    background-color: rgb(40, 40, 40);
-}
-.chats>div>div{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding:10px 15px;
-    border-radius: 20px;
-}
-.chatlar-mal{
-  font-size: 15px;
-  color: #a7a7a7;
-  font-weight: 550;
-}
-.chatlar{
-    display: flex;
-    align-items: start;
-    gap: 16px;
-    cursor: pointer;
-}
-.chatlar img{
-    width: 55px;
-    border-radius: 50%;
-}
 .allchats {
   display: flex;
-  height: calc(100vh); 
-  
+  height: 100vh;
+  overflow: hidden;
 }
 
 .chats {
   min-width: 50px;
   max-width: 380px;
   overflow-y: auto;
-  transition: width 0.1s;
+  transition: width 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
+.chats > div > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
 
+.chatlar-mal {
+  font-size: 15px;
+  color: #a7a7a7;
+  font-weight: 550;
+}
+
+.chatlar {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.chatlar img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 .chatinfo {
   flex: 1;
-  overflow: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
+
 .resizer {
   width: 5px;
   cursor: col-resize;
   background-color: #464646;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .allchats {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .resizer {
+    display: none;
+  }
+
+  .chats {
+    width: 100% !important;
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  .chatinfo {
+    width: 100% !important;
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .back-btn {
+    display: block;
+    background-color: #222;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+  }
+
+  .back-btn-link {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    padding: 5px 10px;
+  }
 }

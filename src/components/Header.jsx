@@ -28,15 +28,12 @@ const Header = ({ setSearchTerm }) => {
 
       {active && (
         <div className="overlay" onClick={() => setActive(false)}>
-          <div className="menu" onClick={(e) => e.stopPropagation()}>
-            <ul>
-              <i
-                class="bx bx-x iks  bx-rotate-90"
-                onClick={() => setActive(false)}
-              ></i>
-
+          <div className="menu">
+            <ul className="menul">
               <li>
-                <i className="bx bx-user-circle"></i> Profile
+                <Link to="/setting">
+                  <i className="bx bx-user-circle"></i> Profile
+                </Link>
               </li>
 
               <li>
@@ -44,12 +41,12 @@ const Header = ({ setSearchTerm }) => {
                   <i className="bx bx-plus"></i> Add Account
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <i className="bx bxs-save"></i> Saved Message
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <i className="bx bx-archive-in"></i> Archive
-              </li>
+              </li> */}
               <li>
                 <i className="bx bxl-digitalocean"></i> My Stores
               </li>
@@ -90,7 +87,6 @@ const Header = ({ setSearchTerm }) => {
                       <Link to="/">
                         <i className="bx bx-log-out-circle"></i> Log Out
                       </Link>
-                      
                     </li>
                   </ul>
                 </div>

@@ -8,13 +8,10 @@ import { chatMalumotlar } from "./Chat1";
 
 function MainApp() {
   const [sidebarWidth, setSidebarWidth] = useState(300);
-  const [tanlanganChat, setTanlanganChat] = useState(chatMalumotlar[0]);
+  const [tanlanganChatId, setTanlanganChatId] = useState(null); // null bo‘lishi mumkin
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
-
-  const [chats, setChats] = useState(chatMalumotlar); 
-  const [tanlanganChatId, setTanlanganChatId] = useState(chats[0].id); 
-
+  const [chats, setChats] = useState(chatMalumotlar);
   const isResizing = useRef(false);
 
   const handleMouseDown = () => {
@@ -24,7 +21,7 @@ function MainApp() {
   const handleMouseMove = (e) => {
     if (!isResizing.current) return;
     const newWidth = e.clientX;
-    if (newWidth > 200 && newWidth < 600) {
+    if (newWidth > 300 && newWidth < 600) {
       setSidebarWidth(newWidth);
     }
   };
@@ -33,20 +30,30 @@ function MainApp() {
     isResizing.current = false;
   };
 
+  const chatTanlash = (id) => {
+    setTanlanganChatId(id);
+  };
+  
+
   return (
     <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
       <div className="allchats">
-        <div className="chats" style={{ width: sidebarWidth }}>
+        <div
+          className={`chats ${tanlanganChatId ? "hide-on-mobile" : ""}`}
+          style={{ width: sidebarWidth }}
+        >
           <Header setSearchTerm={setSearchTerm} />
+          {/* <Groups activeFilter={activeFilter} setActiveFilter={setActiveFilter} /> */}
+     <Groups
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+        chats={chats}
+      />
 
-          <Groups
-            activeFilter={activeFilter}
-            setActiveFilter={setActiveFilter}
-          />
-
+          
           <Chat1
-            chats={chats} 
-            setTanlanganChatId={setTanlanganChatId} 
+            chats={chats}
+            setTanlanganChatId={chatTanlash}
             activeFilter={activeFilter}
             searchTerm={searchTerm}
           />
@@ -54,7 +61,7 @@ function MainApp() {
 
         <div className="resizer" onMouseDown={handleMouseDown} />
 
-        <div className="chatinfo">
+        <div className={`chatinfo ${!tanlanganChatId ? "hide-on-mobile" : ""}`}>
           <Chatinfo
             chat={chats.find((c) => c.id === tanlanganChatId)}
             updateMessages={(newMsg) => {
@@ -65,6 +72,7 @@ function MainApp() {
               );
               setChats(updatedChats);
             }}
+            onBack={() => setTanlanganChatId(null)}
           />
         </div>
       </div>
